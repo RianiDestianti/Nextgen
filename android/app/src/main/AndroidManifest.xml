@@ -31,6 +31,15 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+    <!-- tambahkan permission dibawah ini ke dalam tag 'manifest' -->
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+<!-- tambahkan permission dibawah ini ke dalam tag 'application' -->
+<receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver">
+<intent-filter>
+<action android:name="android.intent.action.BOOT_COMPLETED"/>
+<action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+</intent-filter>
+</receiver>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and
          https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
