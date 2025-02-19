@@ -1,16 +1,21 @@
 // berhasil
+// satu contoh
+
 import 'package:flutter/material.dart';
 
+// fungsi untuk mentrigger proses build aplikasi flutter
 void main() {
   runApp(const TabBarDemo());
 }
 
+// class yang digunakan untuk build aplikasi
 class TabBarDemo extends StatelessWidget {
-  const TabBarDemo({super.key});
+  const TabBarDemo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, //Untuk menghilangkan banner debug
       home: DefaultTabController(
         length: 5,
         child: Scaffold(
@@ -29,15 +34,10 @@ class TabBarDemo extends StatelessWidget {
           ),
           body: const TabBarView(
             children: [
-              Icon(Icons.music_note, size: 100),
-              Icon(Icons.music_video, color: Colors.blue, size: 100),
-              Icon(Icons.camera_alt, semanticLabel: 'Camera', size: 100),
-              Icon(
-                Icons.grade,
-                color: Colors.red,
-                size: 300,
-                semanticLabel: 'Star',
-              ),
+              Icon(Icons.music_note),
+              Icon(Icons.music_video),
+              Icon(Icons.camera_alt),
+              Icon(Icons.grade),
               Icon(Icons.email),
             ],
           ),
